@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="inoxHandle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="35%" stop-color="#f8fafc"/>
+      <stop offset="65%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+
+    <linearGradient id="blackProfile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="glassSubtle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="#0f172a"/>
+
+  <!-- Window Frame Vertical Section -->
+  <rect x="80" y="0" width="120" height="300" fill="url(#blackProfile)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Window Glass on Left -->
+  <rect x="0" y="0" width="80" height="300" fill="url(#glassSubtle)"/>
+  <line x1="80" y1="0" x2="80" y2="300" stroke="#000" stroke-width="4"/> <!-- Rubber EPDM gasket -->
+
+  <!-- Wall / Second Frame on Right -->
+  <rect x="200" y="0" width="200" height="300" fill="#1e293b"/>
+  <rect x="205" y="0" width="70" height="300" fill="url(#blackProfile)"/>
+
+  <!-- Escutcheon Plate (Base do Puxador) -->
+  <rect x="120" y="70" width="40" height="160" rx="8" fill="url(#inoxHandle)" stroke="#475569" stroke-width="1.5"/>
+  <circle cx="140" cy="85" r="4" fill="#334155"/>
+  <circle cx="140" cy="215" r="4" fill="#334155"/>
+
+  <!-- Ergonomic Modern Handle Lever (Maçaneta de Janela/Porta de Alumínio) -->
+  <path d="M130,120 L130,140 Q130,150 140,150 L250,150 Q265,150 265,135 Q265,120 250,120 L140,120 Z" 
+        fill="url(#inoxHandle)" stroke="#475569" stroke-width="2" filter="drop-shadow(2px 5px 6px rgba(0,0,0,0.5))"/>
+
+  <!-- Keyhole / Euro Cylinder Lock -->
+  <circle cx="140" cy="180" r="6" fill="#1e293b"/>
+  <polygon points="137,180 143,180 145,195 135,195" fill="#1e293b"/>
+</svg>

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <!-- Sunset & Ocean Gradient -->
+    <linearGradient id="twilightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c1a2c"/>
+      <stop offset="35%" stop-color="#193755"/>
+      <stop offset="70%" stop-color="#3d5a80"/>
+      <stop offset="90%" stop-color="#ee9b00"/>
+      <stop offset="100%" stop-color="#ca6702"/>
+    </linearGradient>
+
+    <!-- Ocean Water with Reflection -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14213d"/>
+      <stop offset="50%" stop-color="#1f3a5f"/>
+      <stop offset="100%" stop-color="#0b1325"/>
+    </linearGradient>
+
+    <!-- Warm Glowing Interior Lighting -->
+    <linearGradient id="warmInterior" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffe3a8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#fed18c" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f8ad42" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <!-- Sleek Glass Reflection -->
+    <linearGradient id="glassReflection" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#0284c7" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Dark Matte Architectural Concrete -->
+    <linearGradient id="concreteDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+
+    <!-- Dark Aluminum Profile Metal -->
+    <linearGradient id="aluProfile" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="50%" stop-color="#1a202c"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1200" height="680" fill="url(#twilightSky)"/>
+
+  <!-- Distant Islands / Mountains -->
+  <path d="M400,320 Q550,290 700,325 L750,335 L400,335 Z" fill="#1b2a4a" opacity="0.6"/>
+  <path d="M680,315 Q820,285 960,320 L1000,335 L680,335 Z" fill="#152238" opacity="0.8"/>
+
+  <!-- Ocean / Horizon -->
+  <rect x="400" y="325" width="800" height="85" fill="url(#oceanGrad)"/>
+  <!-- Sunset Glow on Water -->
+  <ellipse cx="650" cy="330" rx="140" ry="12" fill="#ee9b00" opacity="0.4"/>
+  <ellipse cx="650" cy="340" rx="90" ry="6" fill="#f8ad42" opacity="0.5"/>
+
+  <!-- Terrace Outdoor Deck Floor (Travertine stone) -->
+  <polygon points="340,680 1200,680 1200,410 340,410" fill="#2b3340"/>
+  <!-- Floor Tile Seams -->
+  <line x1="340" y1="470" x2="1200" y2="470" stroke="#1e2530" stroke-width="2"/>
+  <line x1="340" y1="540" x2="1200" y2="540" stroke="#1e2530" stroke-width="2"/>
+  <line x1="340" y1="610" x2="1200" y2="610" stroke="#1e2530" stroke-width="2"/>
+  <line x1="580" y1="410" x2="520" y2="680" stroke="#1e2530" stroke-width="2"/>
+  <line x1="840" y1="410" x2="800" y2="680" stroke="#1e2530" stroke-width="2"/>
+  <line x1="1080" y1="410" x2="1050" y2="680" stroke="#1e2530" stroke-width="2"/>
+
+  <!-- Modern House Structure - Left & Upper Concrete Shell -->
+  <polygon points="0,0 600,0 600,680 0,680" fill="url(#concreteDark)"/>
+  <!-- Cantilever Overhang Roof -->
+  <polygon points="320,0 1200,0 1200,85 320,85" fill="#0f172a"/>
+  <!-- Ceiling Wood Paneling with Inset Spotlights -->
+  <rect x="340" y="80" width="860" height="25" fill="#3e2723"/>
+  <circle cx="480" cy="92" r="5" fill="#fff" opacity="0.9"/>
+  <circle cx="680" cy="92" r="5" fill="#fff" opacity="0.9"/>
+  <circle cx="880" cy="92" r="5" fill="#fff" opacity="0.9"/>
+  <circle cx="1080" cy="92" r="5" fill="#fff" opacity="0.9"/>
+  <!-- Light Cones -->
+  <polygon points="475,95 440,240 520,240 485,95" fill="#fef08a" opacity="0.12"/>
+  <polygon points="675,95 640,240 720,240 685,95" fill="#fef08a" opacity="0.12"/>
+  <polygon points="875,95 840,240 920,240 885,95" fill="#fef08a" opacity="0.12"/>
+
+  <!-- Living Room Interior Wall & Warm Illumination -->
+  <rect x="420" y="105" width="780" height="305" fill="url(#warmInterior)"/>
+  
+  <!-- Interior Architecture Elements: Wood slats back wall, modern lamp, couch -->
+  <!-- Modern Sofa in Living Room -->
+  <rect x="520" y="270" width="220" height="70" rx="12" fill="#d1d5db" opacity="0.95"/>
+  <rect x="500" y="295" width="260" height="45" rx="8" fill="#9ca3af" opacity="0.95"/>
+  <rect x="540" y="250" width="70" height="35" rx="6" fill="#e5e7eb"/>
+  <rect x="630" y="250" width="70" height="35" rx="6" fill="#e5e7eb"/>
+  <!-- Interior Dining Table / Chairs in background -->
+  <rect x="880" y="290" width="160" height="15" rx="4" fill="#4b5563"/>
+  <line x1="910" y1="305" x2="910" y2="350" stroke="#1f2937" stroke-width="4"/>
+  <line x1="1010" y1="305" x2="1010" y2="350" stroke="#1f2937" stroke-width="4"/>
+
+  <!-- ===================================================================
+       THE STAR OF THE SHOW: HEAVY MATTE BLACK ALUMINUM SLIDING GLASS DOORS
+       =================================================================== -->
+  <!-- Outer Aluminum Subframe / Contramarco -->
+  <rect x="360" y="100" width="840" height="315" fill="none" stroke="#0b0f19" stroke-width="16"/>
+  <!-- Top and Bottom Tracks -->
+  <rect x="360" y="100" width="840" height="10" fill="#1e2530"/>
+  <rect x="360" y="405" width="840" height="10" fill="#1e2530"/>
+
+  <!-- Panel 1 (Leftmost sliding pane) -->
+  <rect x="368" y="108" width="220" height="298" fill="url(#glassReflection)"/>
+  <rect x="368" y="108" width="220" height="298" fill="none" stroke="url(#aluProfile)" stroke-width="12"/>
+  <line x1="578" y1="180" x2="578" y2="310" stroke="#e2e8f0" stroke-width="4"/> <!-- Sleek Inox Handle -->
+
+  <!-- Panel 2 (Middle-left sliding pane) -->
+  <rect x="578" y="108" width="220" height="298" fill="url(#glassReflection)"/>
+  <rect x="578" y="108" width="220" height="298" fill="none" stroke="url(#aluProfile)" stroke-width="12"/>
+  <line x1="788" y1="180" x2="788" y2="310" stroke="#e2e8f0" stroke-width="4"/>
+
+  <!-- Panel 3 (Middle-right sliding pane) -->
+  <rect x="788" y="108" width="220" height="298" fill="url(#glassReflection)"/>
+  <rect x="788" y="108" width="220" height="298" fill="none" stroke="url(#aluProfile)" stroke-width="12"/>
+  <line x1="998" y1="180" x2="998" y2="310" stroke="#e2e8f0" stroke-width="4"/>
+
+  <!-- Panel 4 (Rightmost sliding pane) -->
+  <rect x="998" y="108" width="202" height="298" fill="url(#glassReflection)"/>
+  <rect x="998" y="108" width="202" height="298" fill="none" stroke="url(#aluProfile)" stroke-width="12"/>
+
+  <!-- Outdoor Decorative Planters on Terrace -->
+  <rect x="380" y="380" width="35" height="50" rx="3" fill="#111827"/>
+  <circle cx="397" cy="370" r="22" fill="#2d6a4f"/>
+  <circle cx="388" cy="360" r="16" fill="#40916c"/>
+  <circle cx="408" cy="362" r="18" fill="#52b788"/>
+
+  <rect x="430" y="390" width="30" height="40" rx="3" fill="#1f2937"/>
+  <circle cx="445" cy="380" r="18" fill="#2d6a4f"/>
+  <circle cx="452" cy="375" r="14" fill="#40916c"/>
+
+  <!-- Left Dark Gradient Vignette for Text Contrast -->
+  <rect x="0" y="0" width="600" height="680" fill="url(#concreteDark)" opacity="0.95"/>
+  <rect x="500" y="0" width="220" height="680" fill="url(#concreteDark)" opacity="0.5"/>
+</svg>

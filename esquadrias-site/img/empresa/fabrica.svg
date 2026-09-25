@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#fabGrad)"/>
+  
+  <!-- Factory Machinery / CNC Cutting Center / Profiles Rack -->
+  <!-- Racks with Aluminum Extrusions -->
+  <rect x="40" y="80" width="180" height="240" fill="#334155" rx="4"/>
+  <rect x="50" y="95" width="160" height="15" fill="#94a3b8" rx="2"/>
+  <rect x="50" y="125" width="160" height="15" fill="#cbd5e1" rx="2"/>
+  <rect x="50" y="155" width="160" height="15" fill="#64748b" rx="2"/>
+  <rect x="50" y="185" width="160" height="15" fill="#94a3b8" rx="2"/>
+  <rect x="50" y="215" width="160" height="15" fill="#cbd5e1" rx="2"/>
+  <rect x="50" y="245" width="160" height="15" fill="#64748b" rx="2"/>
+  <rect x="50" y="275" width="160" height="15" fill="#cbd5e1" rx="2"/>
+
+  <!-- High Precision Dual Head Cutting Saw / Mesa de Montagem -->
+  <rect x="250" y="160" width="310" height="160" fill="#1e3a8a" rx="4" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="265" y="180" width="280" height="30" fill="#0f172a" rx="2"/>
+  <!-- Circular Saw Blade Indicator -->
+  <circle cx="340" cy="195" r="22" fill="#e2e8f0" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="470" cy="195" r="22" fill="#e2e8f0" stroke="#3b82f6" stroke-width="2"/>
+  
+  <!-- Digital Control Screen -->
+  <rect x="270" y="100" width="70" height="50" rx="3" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="305" y="125" fill="#ffffff" font-family="monospace" font-size="9" text-anchor="middle">CNC AUTO</text>
+  <text x="305" y="140" fill="#86efac" font-family="monospace" font-size="8" text-anchor="middle">PRECISÃO 0.1mm</text>
+  
+  <rect x="40" y="345" width="520" height="30" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="365" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">PARQUE FABRIL COM CORTE COMPUTADORIZADO E USINAGEM</text>
+</svg>

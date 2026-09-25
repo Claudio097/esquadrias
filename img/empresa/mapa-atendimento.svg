@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <filter id="pinShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0284c7" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="300" fill="url(#mapBg)"/>
+
+  <!-- Stylized Geographic Contours / Municipal Regional Boundaries -->
+  <path d="M120,50 Q220,30 320,60 T480,100 Q460,200 420,260 T250,280 Q100,260 80,180 Z" 
+        fill="#e2e8f0" opacity="0.6"/>
+  
+  <path d="M160,80 Q250,60 350,90 T430,160 Q400,240 320,250 T180,220 Q120,160 160,80 Z" 
+        fill="#cbd5e1" opacity="0.45"/>
+
+  <!-- Road Networks / Avenidas Principais -->
+  <path d="M50,150 Q180,140 280,170 T480,160" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <path d="M200,30 Q220,130 260,200 T320,290" fill="none" stroke="#ffffff" stroke-width="5"/>
+  <path d="M100,240 Q240,210 380,120 T460,80" fill="none" stroke="#ffffff" stroke-width="4"/>
+
+  <!-- Secondary Road Network -->
+  <path d="M50,150 Q180,140 280,170 T480,160" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+  <path d="M200,30 Q220,130 260,200 T320,290" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+
+  <!-- Coverage Ring Waves radiating from central hub -->
+  <circle cx="280" cy="165" r="45" fill="none" stroke="#0284c7" stroke-width="1.5" opacity="0.3" stroke-dasharray="3 3"/>
+  <circle cx="280" cy="165" r="85" fill="none" stroke="#0284c7" stroke-width="1.5" opacity="0.2" stroke-dasharray="4 4"/>
+  <circle cx="280" cy="165" r="130" fill="none" stroke="#0284c7" stroke-width="1.5" opacity="0.1" stroke-dasharray="6 6"/>
+
+  <!-- Central Location Pin (Blue) with Drop Shadow -->
+  <g transform="translate(280, 165)" filter="url(#pinShadow)">
+    <ellipse cx="0" cy="0" rx="10" ry="4" fill="#0369a1" opacity="0.3"/>
+    <path d="M0,-36 C-12,-36 -20,-26 -20,-14 C-20,2 0,0 0,0 C0,0 20,2 20,-14 C20,-26 12,-36 0,-36 Z" fill="#0084ff"/>
+    <circle cx="0" cy="-18" r="8" fill="#ffffff"/>
+    <circle cx="0" cy="-18" r="4" fill="#0084ff"/>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="metalDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="30%" stop-color="#1e293b"/>
+      <stop offset="70%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="metalCutFace" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="25%" stop-color="#cbd5e1"/>
+      <stop offset="50%" stop-color="#64748b"/>
+      <stop offset="85%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <linearGradient id="metalSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="#0b0f19"/>
+
+  <!-- Extrusion Profile Perspective Representation -->
+  <!-- Top 3D extrusion length going back into depth -->
+  <polygon points="120,60 280,30 350,110 190,140" fill="url(#metalSide)" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="190,140 350,110 350,220 190,250" fill="url(#metalDark)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Front Precision Cut Face (Showing internal thermal break chambers & screw ports) -->
+  <g transform="translate(60, 50)">
+    <!-- Outer Contour of Profile -->
+    <path d="M40,20 L160,20 L160,50 L140,50 L140,80 L160,80 L160,180 L130,180 L130,150 L70,150 L70,180 L40,180 L40,80 L60,80 L60,50 L40,50 Z" 
+          fill="url(#metalCutFace)" stroke="#cbd5e1" stroke-width="2"/>
+    
+    <!-- Hollow Chamber 1 (Top) -->
+    <rect x="70" y="32" width="60" height="30" rx="3" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+    <!-- Screw Port Spline -->
+    <circle cx="100" cy="47" r="6" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Hollow Chamber 2 (Middle Thermal Break) -->
+    <rect x="70" y="75" width="60" height="40" rx="3" fill="#020617" stroke="#334155" stroke-width="1.5"/>
+    <line x1="70" y1="95" x2="130" y2="95" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Polyamide Thermal Break Inserts -->
+    <rect x="62" y="77" width="6" height="36" fill="#e11d48"/>
+    <rect x="132" y="77" width="6" height="36" fill="#e11d48"/>
+
+    <!-- Gasket Channels / Encaixe de Borracha EPDM -->
+    <path d="M48,100 L56,100 L54,120 L48,120 Z" fill="#0f172a"/>
+    <path d="M144,100 L152,100 L152,120 L146,120 Z" fill="#0f172a"/>
+  </g>
+
+  <!-- Ambient Blue Architectural Glow -->
+  <circle cx="200" cy="150" r="160" fill="#0284c7" opacity="0.08"/>
+</svg>

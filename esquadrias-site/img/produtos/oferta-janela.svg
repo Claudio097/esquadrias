@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <!-- Wall / Room Ambient Gradient -->
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <!-- Powder-coated White Aluminum Profile -->
+    <linearGradient id="whiteAluProfile" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#f1f5f9"/>
+      <stop offset="60%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <!-- Double Glazed Clear Glass -->
+    <linearGradient id="windowGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#bae6fd" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#e0f2fe" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <linearGradient id="glassStreak" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="600" height="500" fill="url(#wallGrad)"/>
+
+  <!-- Outside Daylight / Sky View Through Window -->
+  <rect x="130" y="55" width="370" height="340" fill="#bae6fd"/>
+  <!-- Distant Greenery outside -->
+  <circle cx="200" cy="400" r="140" fill="#86efac" opacity="0.6"/>
+  <circle cx="360" cy="400" r="120" fill="#4ade80" opacity="0.5"/>
+  <circle cx="480" cy="400" r="130" fill="#22c55e" opacity="0.4"/>
+
+  <!-- Wall Window Recess Opening (Chamfer/Reveal) -->
+  <polygon points="100,20 530,20 510,40 120,40" fill="#cbd5e1" opacity="0.8"/>
+  <polygon points="100,20 120,40 120,410 100,430" fill="#94a3b8" opacity="0.5"/>
+  <polygon points="530,20 530,430 510,410 510,40" fill="#cbd5e1" opacity="0.6"/>
+
+  <!-- Main Aluminum Subframe / Marco (White Powder Coated) -->
+  <rect x="120" y="40" width="390" height="370" rx="4" fill="url(#whiteAluProfile)" stroke="#cbd5e1" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="138" y="58" width="354" height="334" fill="#0f172a" opacity="0.08"/>
+
+  <!-- Left Sliding Sash (Folha Esquerda) -->
+  <rect x="142" y="62" width="180" height="326" rx="3" fill="url(#whiteAluProfile)" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="156" y="76" width="152" height="298" fill="url(#windowGlass)"/>
+  <!-- Diagonal Glass Glare -->
+  <polygon points="156,76 220,76 156,220" fill="url(#glassStreak)"/>
+  <polygon points="156,180 280,76 308,76 156,360" fill="url(#glassStreak)"/>
+  <!-- Integrated White Flush Latch / Fecho Concha -->
+  <rect x="300" y="200" width="14" height="50" rx="3" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="303" y="210" width="8" height="30" rx="2" fill="#64748b"/>
+
+  <!-- Right Sliding Sash (Folha Direita - slightly forward on track) -->
+  <rect x="312" y="62" width="180" height="326" rx="3" fill="url(#whiteAluProfile)" stroke="#cbd5e1" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="326" y="76" width="152" height="298" fill="url(#windowGlass)"/>
+  <!-- Diagonal Glass Glare -->
+  <polygon points="326,76 390,76 326,220" fill="url(#glassStreak)"/>
+  <polygon points="326,180 450,76 478,76 326,360" fill="url(#glassStreak)"/>
+  <!-- Flush Latch Right -->
+  <rect x="470" y="200" width="14" height="50" rx="3" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="473" y="210" width="8" height="30" rx="2" fill="#64748b"/>
+
+  <!-- Lower Windowsill / Peitoril em Granito Branco -->
+  <polygon points="80,410 550,410 570,440 60,440" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#softShadow)"/>
+  <polygon points="60,440 570,440 570,455 60,455" fill="#e2e8f0"/>
+
+  <!-- Small Decorative Potted Plant on Windowsill (as in reference image) -->
+  <ellipse cx="140" cy="432" rx="22" ry="7" fill="#0f172a" opacity="0.2"/>
+  <polygon points="126,432 154,432 150,405 130,405" fill="#78350f" stroke="#451a03" stroke-width="1.5"/>
+  <!-- Green Succulent Plant Leaves -->
+  <ellipse cx="140" cy="395" rx="14" ry="16" fill="#15803d"/>
+  <ellipse cx="130" cy="400" rx="12" ry="10" fill="#16a34a"/>
+  <ellipse cx="150" cy="400" rx="12" ry="10" fill="#22c55e"/>
+  <ellipse cx="140" cy="385" rx="10" ry="12" fill="#4ade80"/>
+</svg>

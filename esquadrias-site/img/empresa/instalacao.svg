@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="instGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="laserBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#instGrad)"/>
+  
+  <!-- Masonry Opening with Subframe (Contramarco) -->
+  <rect x="100" y="40" width="400" height="280" fill="#334155" stroke="#64748b" stroke-width="4"/>
+  <rect x="120" y="60" width="360" height="240" fill="#0f172a"/>
+  
+  <!-- Aluminum Frame being plumbed into contramarco with precision seals -->
+  <rect x="135" y="75" width="330" height="210" fill="none" stroke="#38bdf8" stroke-width="5"/>
+  <rect x="150" y="90" width="140" height="180" fill="#38bdf8" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="310" y="90" width="140" height="180" fill="#38bdf8" fill-opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+
+  <!-- Precision Leveling Line / Laser Level Tripod -->
+  <line x1="80" y1="180" x2="520" y2="180" stroke="url(#laserBeam)" stroke-width="2" stroke-dasharray="8,2"/>
+  <circle cx="200" cy="180" r="4" fill="#ef4444"/>
+  <circle cx="400" cy="180" r="4" fill="#ef4444"/>
+  
+  <!-- Level Tool Icon on Top Rail -->
+  <rect x="250" y="66" width="100" height="14" rx="2" fill="#eab308" stroke="#ca8a04" stroke-width="1"/>
+  <circle cx="300" cy="73" r="3" fill="#84cc16"/>
+
+  <!-- Silicone Sealant & Fasteners indication -->
+  <circle cx="127" cy="100" r="3" fill="#cbd5e1"/>
+  <circle cx="127" cy="180" r="3" fill="#cbd5e1"/>
+  <circle cx="127" cy="260" r="3" fill="#cbd5e1"/>
+  <circle cx="473" cy="100" r="3" fill="#cbd5e1"/>
+  <circle cx="473" cy="180" r="3" fill="#cbd5e1"/>
+  <circle cx="473" cy="260" r="3" fill="#cbd5e1"/>
+
+  <rect x="40" y="345" width="520" height="30" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="365" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">INSTALAÇÃO COM CONTRAMARCO, VEDAÇÃO ACÚSTICA E PRUMO A LASER</text>
+</svg>

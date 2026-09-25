@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Indexação -->
+    <title>Esquadrias de Alumínio | Qualidade e Melhor Preço</title>
+    <meta name="description" content="Encontre esquadrias de alumínio, portas e janelas para sua obra. Consulte nossos produtos, ofertas e solicite seu orçamento." />
+    <meta name="keywords" content="esquadrias de aluminio, portas de aluminio, janelas de aluminio, janela de correr, porta balcao, maxim-ar, orcamento esquadrias" />
+    <meta name="author" content="Esquadrias Alumínio" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Esquadrias Alumínio" />
+    <meta property="og:title" content="Esquadrias de Alumínio | Qualidade e Melhor Preço" />
+    <meta property="og:description" content="Encontre esquadrias de alumínio, portas e janelas para sua obra. Consulte nossos produtos, ofertas e solicite seu orçamento." />
+    <meta property="og:image" content="img/banners/hero-banner.svg" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Esquadrias de Alumínio | Qualidade e Melhor Preço" />
+    <meta name="twitter:description" content="Encontre esquadrias de alumínio, portas e janelas para sua obra. Consulte nossos produtos, ofertas e solicite seu orçamento." />
+    <meta name="twitter:image" content="img/banners/hero-banner.svg" />
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230084ff'><rect x='3' y='3' width='18' height='18' rx='2' fill='none' stroke='%230084ff' stroke-width='2'/><path d='M3 12h18M12 3v18' stroke='%230084ff' stroke-width='2'/></svg>" />
+
+    <!-- Fontes Google (Inter para legibilidade e visual moderno de alta tecnologia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Folha de Estilos Principal -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Dados Estruturados Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Esquadrias de Alumínio",
+      "description": "Fabricação e instalação de esquadrias de alumínio de alta precisão, portas, janelas e fachadas sob medida.",
+      "telephone": "+55 11 99999-9999",
+      "priceRange": "$$",
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "Cartão de Crédito, Pix, Boleto, Transferência",
+      "areaServed": "Brasil"
+    }
+    </script>
+  </head>
+  <body>
+    <!-- ====================================================================
+         CABEÇALHO PRINCIPAL (STICKY)
+         ==================================================================== -->
+    <header id="siteHeader" class="site-header">
+      <div class="site-container header-inner">
+        <!-- Logo Principal -->
+        <a href="#inicio" class="brand-logo" id="mainBrandLogo" aria-label="Esquadrias - Qualidade em Cada Detalhe">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="12" y1="3" x2="12" y2="21" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">ESQUADRIAS</span>
+            <span class="brand-subtitle">QUALIDADE EM CADA DETALHE</span>
+          </div>
+        </a>
+
+        <!-- Navegação Desktop -->
+        <nav class="desktop-nav" aria-label="Navegação do site">
+          <a href="#inicio" class="nav-item">Início</a>
+          <a href="#produtos" class="nav-item">Produtos</a>
+          <a href="#ofertas" class="nav-item">Ofertas</a>
+          <a href="#diferenciais" class="nav-item">Diferenciais</a>
+          <a href="#sobre" class="nav-item">Sobre nós</a>
+          <a href="#regiao" class="nav-item">Região</a>
+          <a href="#faq" class="nav-item">Dúvidas</a>
+        </nav>
+
+        <!-- Ação do Cabeçalho -->
+        <div class="header-cta-group">
+          <button type="button" class="btn btn-pill-blue header-quote-btn" id="openQuoteModalHeader">
+            Solicitar orçamento
+          </button>
+          
+          <!-- Botão Menu Mobile -->
+          <button id="mobileMenuBtn" class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Gaveta Menu Mobile -->
+    <div id="mobileDrawer" class="mobile-drawer-overlay" aria-hidden="true">
+      <div class="mobile-drawer-panel">
+        <div class="mobile-drawer-header">
+          <div class="brand-text">
+            <span class="brand-title">ESQUADRIAS</span>
+            <span class="brand-subtitle">QUALIDADE EM CADA DETALHE</span>
+          </div>
+          <button id="closeMobileDrawerBtn" class="close-drawer-btn" aria-label="Fechar menu">&times;</button>
+        </div>
+        <nav class="mobile-nav-list">
+          <a href="#inicio" class="mobile-link">Início</a>
+          <a href="#produtos" class="mobile-link">Nossos Produtos</a>
+          <a href="#ofertas" class="mobile-link">Oferta Especial</a>
+          <a href="#diferenciais" class="mobile-link">Diferenciais</a>
+          <a href="#sobre" class="mobile-link">Sobre nós</a>
+          <a href="#regiao" class="mobile-link">Atendemos sua região</a>
+          <a href="#faq" class="mobile-link">Perguntas Frequentes</a>
+        </nav>
+        <div class="mobile-drawer-footer">
+          <button type="button" class="btn btn-pill-blue btn-full" id="openQuoteModalMobile">
+            Solicitar orçamento
+          </button>
+          <button type="button" class="btn btn-whatsapp btn-full" id="whatsappQuickDrawer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Falar pelo WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         CONTEÚDO PRINCIPAL DO SITE
+         ==================================================================== -->
+    <main id="mainContent" class="main-canvas">
+      <div class="site-container layout-wrapper">
+
+        <!-- ================================================================
+             1. LINHA SUPERIOR: HERO CARD (ESQUERDA) + OFERTA ESPECIAL (DIREITA)
+             ================================================================ -->
+        <section id="inicio" class="top-bento-grid" aria-label="Destaques e Oferta">
+          
+          <!-- Card do Hero (Visual Arquitetônico com Portas de Alumínio) -->
+          <article class="hero-bento-card" id="heroCard">
+            <div class="hero-card-background">
+              <img src="img/banners/hero-banner.svg" alt="Fachada moderna com esquadrias de alumínio" class="hero-bg-img" />
+              <div class="hero-card-overlay"></div>
+            </div>
+
+            <div class="hero-card-content">
+              <!-- Logotipo Interno do Hero conforme imagem de referência -->
+              <div class="hero-inner-brand">
+                <div class="hero-brand-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="12" y1="3" x2="12" y2="21" />
+                  </svg>
+                </div>
+                <div class="hero-brand-labels">
+                  <span class="hero-brand-name">ESQUADRIAS</span>
+                  <span class="hero-brand-sub">QUALIDADE EM CADA DETALHE</span>
+                </div>
+              </div>
+
+              <!-- Título com Destaque Azul -->
+              <h1 class="hero-headline">
+                Esquadrias de qualidade<br />
+                <span class="text-highlight-blue">pelo melhor preço</span>
+              </h1>
+
+              <!-- Descrição -->
+              <p class="hero-description">
+                Soluções em esquadrias para sua obra, reforma ou projeto, com qualidade, segurança e preços competitivos.
+              </p>
+
+              <!-- Botões de Ação do Hero -->
+              <div class="hero-action-buttons">
+                <a href="#produtos" class="btn btn-pill-blue" id="heroBtnVerProdutos">
+                  Ver produtos &gt;
+                </a>
+                <button type="button" class="btn btn-pill-outline-white" id="heroBtnSolicitarOrcamento">
+                  Solicitar orçamento
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card da Oferta Especial (Direita) -->
+          <aside class="special-offer-card" id="ofertas" aria-label="Oferta Especial do Mês">
+            <div class="offer-card-layout">
+              <div class="offer-info-col">
+                <span class="badge-special-offer">OFERTA ESPECIAL</span>
+                
+                <h2 class="offer-product-name">
+                  Janela de Alumínio<br />
+                  <span class="offer-dimensions">1,20 x 1,00 m</span>
+                </h2>
+
+                <div class="offer-pricing-block">
+                  <span class="offer-old-price">R$ 699,90</span>
+                  <div class="offer-main-price-row">
+                    <span class="offer-currency">R$</span>
+                    <span class="offer-price-val">549</span>
+                    <span class="offer-price-cents">,90</span>
+                    <span class="badge-discount">21% OFF</span>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-pill-blue offer-cta-btn" id="btnInteresseOferta">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                  </svg>
+                  Tenho interesse
+                </button>
+              </div>
+
+              <!-- Imagem da Janela com Vaso de Planta conforme modelo -->
+              <div class="offer-image-col lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Janela de Alumínio 1,20 x 1,00 m em promoção"
+                   data-lightbox-src="img/produtos/oferta-janela.svg"
+                   data-lightbox-title="Janela de Alumínio 1,20 x 1,00 m (Oferta Especial)"
+                   data-lightbox-desc="Janela 2 folhas em alumínio branco com vidro transparente, trilhos de deslizamento suave e 21% de desconto.">
+                <img src="img/produtos/oferta-janela.svg" alt="Janela de Alumínio Branca 1,20x1,00m em promoção" class="offer-window-photo" />
+                <span class="thumb-zoom-badge" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                  Ampliar
+                </span>
+              </div>
+            </div>
+          </aside>
+
+        </section>
+
+
+        <!-- ================================================================
+             2. BARRA DE DIFERENCIAIS (4 COLUNAS EM CARD BRANCO ESTRUTURADO)
+             ================================================================ -->
+        <section id="diferenciais" class="differentials-strip-card" aria-label="Diferenciais da Empresa">
+          <div class="differentials-grid">
+            
+            <!-- 1. Qualidade -->
+            <div class="differential-item" id="diffQualidade">
+              <div class="diff-icon-circle" aria-hidden="true">
+                <!-- Ícone Roseta / Medalha -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <div class="diff-text">
+                <h3 class="diff-title">Qualidade</h3>
+                <p class="diff-desc">Produtos selecionados para garantir durabilidade e segurança.</p>
+              </div>
+            </div>
+
+            <!-- 2. Preços Competitivos -->
+            <div class="differential-item" id="diffPrecos">
+              <div class="diff-icon-circle" aria-hidden="true">
+                <!-- Ícone Etiqueta de Preço -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                  <line x1="7" y1="7" x2="7.01" y2="7" />
+                </svg>
+              </div>
+              <div class="diff-text">
+                <h3 class="diff-title">Preços competitivos</h3>
+                <p class="diff-desc">Condições especiais e preços pensados para diferentes tipos de projetos.</p>
+              </div>
+            </div>
+
+            <!-- 3. Atendimento -->
+            <div class="differential-item" id="diffAtendimento">
+              <div class="diff-icon-circle" aria-hidden="true">
+                <!-- Ícone Headset Atendimento -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                </svg>
+              </div>
+              <div class="diff-text">
+                <h3 class="diff-title">Atendimento</h3>
+                <p class="diff-desc">Atendimento rápido para tirar dúvidas e preparar seu orçamento.</p>
+              </div>
+            </div>
+
+            <!-- 4. Entrega -->
+            <div class="differential-item" id="diffEntrega">
+              <div class="diff-icon-circle" aria-hidden="true">
+                <!-- Ícone Caminhão de Entrega -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <div class="diff-text">
+                <h3 class="diff-title">Entrega</h3>
+                <p class="diff-desc">Soluções pensadas para facilitar o andamento da sua obra.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- ================================================================
+             3. SEÇÃO DO MEIO: PRODUTOS (ESQUERDA) + SHOWCASE / SOBRE / REGIÃO (DIREITA)
+             ================================================================ -->
+        <section class="middle-bento-section" aria-label="Vitrine de Produtos e Informações">
+          
+          <!-- COLUNA ESQUERDA: NOSSOS PRODUTOS (6 CARDS) -->
+          <div class="products-showcase-column" id="produtos">
+            
+            <div class="products-column-header">
+              <div class="header-titles">
+                <h2 class="section-heading-dark">Nossos produtos</h2>
+                <p class="section-subheading-muted">Diversas opções em esquadrias para todos os tipos de projetos.</p>
+              </div>
+              <a href="#produtos" class="view-all-products-link" id="viewAllLink">
+                Ver todos os produtos <span class="arrow">&rarr;</span>
+              </a>
+            </div>
+
+            <!-- Grid de 6 Produtos (Exatamente como na imagem de referência) -->
+            <div class="products-cards-grid">
+              
+              <!-- Produto 1: Janela de alumínio -->
+              <article class="product-item-card" id="cardJanelaAluminio">
+                <div class="product-thumb-holder lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Janela de alumínio"
+                     data-lightbox-src="img/produtos/janela-aluminio.svg"
+                     data-lightbox-title="Janela de Alumínio"
+                     data-lightbox-desc="Esquadria de alumínio moderna para diferentes tipos de ambientes. Conta com alta durabilidade, baixa manutenção e pintura eletrostática premium.">
+                  <img src="img/produtos/janela-aluminio.svg" alt="Janela de alumínio linha moderna" class="product-image" loading="lazy" decoding="async" />
+                  <span class="thumb-zoom-badge" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    Ampliar
+                  </span>
+                </div>
+                <div class="product-item-body">
+                  <h3 class="product-card-title">Janela de alumínio</h3>
+                  <p class="product-card-desc">Esquadria de alumínio para diferentes tipos de ambientes.</p>
+                  
+                  <ul class="product-checklist">
+                    <li><span class="check-icon">&#10003;</span> Alta durabilidade</li>
+                    <li><span class="check-icon">&#10003;</span> Baixa manutenção</li>
+                    <li><span class="check-icon">&#10003;</span> Design moderno</li>
+                  </ul>
+
+                  <div class="product-card-footer">
+                    <span class="price-inquiry-tag">Consulte o preço</span>
+                    <button type="button" class="btn btn-pill-blue btn-product-quote" data-produto="Janela de Alumínio">
+                      Solicitar orçamento
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Produto 2: Porta de alumínio -->
+              <article class="product-item-card" id="cardPortaAluminio">
+                <div class="product-thumb-holder lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Porta de alumínio"
+                     data-lightbox-src="img/produtos/porta-aluminio.svg"
+                     data-lightbox-title="Porta de Alumínio"
+                     data-lightbox-desc="Opções para ambientes residenciais e comerciais com estrutura reforçada, resistência a intempéries e puxador contemporâneo em inox.">
+                  <img src="img/produtos/porta-aluminio.svg" alt="Porta de alumínio residencial e comercial" class="product-image" loading="lazy" decoding="async" />
+                  <span class="thumb-zoom-badge" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    Ampliar
+                  </span>
+                </div>
+                <div class="product-item-body">
+                  <h3 class="product-card-title">Porta de alumínio</h3>
+                  <p class="product-card-desc">Opções para ambientes residenciais e comerciais.</p>
+                  
+                  <ul class="product-checklist">
+                    <li><span class="check-icon">&#10003;</span> Resistente</li>
+                    <li><span class="check-icon">&#10003;</span> Moderna</li>
+                    <li><span class="check-icon">&#10003;</span> Diversos modelos</li>
+                  </ul>
+
+                  <div class="product-card-footer">
+                    <span class="price-inquiry-tag">Consulte o preço</span>
+                    <button type="button" class="btn btn-pill-blue btn-product-quote" data-produto="Porta de Alumínio">
+                      Solicitar orçamento
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Produto 3: Janela de correr -->
+              <article class="product-item-card" id="cardJanelaCorrer">
+                <div class="product-thumb-holder lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Janela de correr"
+                     data-lightbox-src="img/produtos/janela-correr.svg"
+                     data-lightbox-title="Janela de Correr"
+                     data-lightbox-desc="Modelo de correr em alumínio com trilhos suaves de alta precisão, economia de espaço e fechamento ergonômico seguro.">
+                  <img src="img/produtos/janela-correr.svg" alt="Janela de correr moderna e funcional" class="product-image" loading="lazy" decoding="async" />
+                  <span class="thumb-zoom-badge" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    Ampliar
+                  </span>
+                </div>
+                <div class="product-item-body">
+                  <h3 class="product-card-title">Janela de correr</h3>
+                  <p class="product-card-desc">Modelo moderno e funcional.</p>
+                  
+                  <ul class="product-checklist">
+                    <li><span class="check-icon">&#10003;</span> Praticidade</li>
+                    <li><span class="check-icon">&#10003;</span> Economia de espaço</li>
+                    <li><span class="check-icon">&#10003;</span> Vários tamanhos</li>
+                  </ul>
+
+                  <div class="product-card-footer">
+                    <span class="price-inquiry-tag">Consulte o preço</span>
+                    <button type="button" class="btn btn-pill-blue btn-product-quote" data-produto="Janela de Correr">
+                      Solicitar orçamento
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Produto 4: Porta balcão -->
+              <article class="product-item-card" id="cardPortaBalcao">
+                <div class="product-thumb-holder lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Porta balcão"
+                     data-lightbox-src="img/produtos/porta-balcao.svg"
+                     data-lightbox-title="Porta Balcão"
+                     data-lightbox-desc="Porta balcão panorâmica ideal para integração de salas, varandas e terraços. Máxima entrada de luz natural e conforto acústico.">
+                  <img src="img/produtos/porta-balcao.svg" alt="Porta balcão para salas e varandas" class="product-image" loading="lazy" decoding="async" />
+                  <span class="thumb-zoom-badge" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    Ampliar
+                  </span>
+                </div>
+                <div class="product-item-body">
+                  <h3 class="product-card-title">Porta balcão</h3>
+                  <p class="product-card-desc">Ideal para salas, varandas e áreas externas.</p>
+                  
+                  <ul class="product-checklist">
+                    <li><span class="check-icon">&#10003;</span> Mais luminosidade</li>
+                    <li><span class="check-icon">&#10003;</span> Visual moderno</li>
+                    <li><span class="check-icon">&#10003;</span> Alta resistência</li>
+                  </ul>
+
+                  <div class="product-card-footer">
+                    <span class="price-inquiry-tag">Consulte o preço</span>
+                    <button type="button" class="btn btn-pill-blue btn-product-quote" data-produto="Porta Balcão">
+                      Solicitar orçamento
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Produto 5: Maxim-ar -->
+              <article class="product-item-card" id="cardMaximAr">
+                <div class="product-thumb-holder lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Maxim-ar"
+                     data-lightbox-src="img/produtos/maxim-ar.svg"
+                     data-lightbox-title="Maxim-ar"
+                     data-lightbox-desc="Excelente opção para circulação de ar contínua e luminosidade em banheiros, lavabos e cozinhas, com braço de fricção reforçado.">
+                  <img src="img/produtos/maxim-ar.svg" alt="Janela Maxim-ar para ventilação" class="product-image" loading="lazy" decoding="async" />
+                  <span class="thumb-zoom-badge" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    Ampliar
+                  </span>
+                </div>
+                <div class="product-item-body">
+                  <h3 class="product-card-title">Maxim-ar</h3>
+                  <p class="product-card-desc">Excelente opção para ventilação e iluminação.</p>
+                  
+                  <ul class="product-checklist">
+                    <li><span class="check-icon">&#10003;</span> Ventilação natural</li>
+                    <li><span class="check-icon">&#10003;</span> Praticidade</li>
+                    <li><span class="check-icon">&#10003;</span> Design compacto</li>
+                  </ul>
+
+                  <div class="product-card-footer">
+                    <span class="price-inquiry-tag">Consulte o preço</span>
+                    <button type="button" class="btn btn-pill-blue btn-product-quote" data-produto="Maxim-ar">
+                      Solicitar orçamento
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Produto 6: Esquadrias sob medida -->
+              <article class="product-item-card" id="cardSobMedida">
+                <div class="product-thumb-holder lightbox-trigger" tabindex="0" role="button" aria-label="Ampliar foto: Esquadrias sob medida"
+                     data-lightbox-src="img/produtos/sob-medida.svg"
+                     data-lightbox-title="Esquadrias Sob Medida"
+                     data-lightbox-desc="Projetos especiais, fachadas em pele de vidro structural glazing, fechamentos de sacadas e esquadrias personalizadas conforme sua arquitetura.">
+                  <img src="img/produtos/sob-medida.svg" alt="Esquadrias sob medida e pele de vidro" class="product-image" loading="lazy" decoding="async" />
+                  <span class="thumb-zoom-badge" aria-hidden="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <line x1="11" y1="8" x2="11" y2="14"></line>
+                      <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    Ampliar
+                  </span>
+                </div>
+                <div class="product-item-body">
+                  <h3 class="product-card-title">Esquadrias sob medida</h3>
+                  <p class="product-card-desc">Soluções personalizadas conforme as necessidades do projeto.</p>
+                  
+                  <ul class="product-checklist">
+                    <li><span class="check-icon">&#10003;</span> Medidas especiais</li>
+                    <li><span class="check-icon">&#10003;</span> Diversos materiais</li>
+                    <li><span class="check-icon">&#10003;</span> Atendimento personalizado</li>
+                  </ul>
+
+                  <div class="product-card-footer">
+                    <span class="price-inquiry-tag">Consulte o preço</span>
+                    <button type="button" class="btn btn-pill-blue btn-product-quote" data-produto="Esquadrias Sob Medida">
+                      Solicitar orçamento
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+
+          <!-- COLUNA DIREITA: DETALHES DE MATERIAIS, SOBRE NÓS E REGIÃO -->
+          <div class="sidebar-showcase-column">
+            
+            <!-- 1. Linha de 3 Detalhes Técnicos de Materiais -->
+            <div class="materials-detail-row">
+              
+              <!-- Detalhe 1: Perfil de Alumínio -->
+              <div class="material-card lightbox-trigger" id="matPerfil" tabindex="0" role="button" aria-label="Ampliar foto: Perfil de alumínio com alta durabilidade"
+                   data-lightbox-src="img/empresa/perfil-detalhe.svg"
+                   data-lightbox-title="Perfil de Alumínio com Alta Durabilidade"
+                   data-lightbox-desc="Perfil estrutural reforçado com liga especial de alumínio, resistência mecânica e proteção contra corrosão e maresia.">
+                <img src="img/empresa/perfil-detalhe.svg" alt="Corte do perfil de alumínio" class="material-img" loading="lazy" decoding="async" />
+                <div class="material-caption">
+                  <span>Perfil de alumínio com alta durabilidade</span>
+                </div>
+              </div>
+
+              <!-- Detalhe 2: Fechamento Seguro -->
+              <div class="material-card lightbox-trigger" id="matFechamento" tabindex="0" role="button" aria-label="Ampliar foto: Fechamento seguro e moderno"
+                   data-lightbox-src="img/empresa/fechamento-detalhe.svg"
+                   data-lightbox-title="Fechamento Seguro e Moderno"
+                   data-lightbox-desc="Sistemas de travas multiponto, maçanetas ergonômicas e fechaduras em aço inoxidável para proteção total de sua família.">
+                <img src="img/empresa/fechamento-detalhe.svg" alt="Fechamento e fechadura segura em inox" class="material-img" loading="lazy" decoding="async" />
+                <div class="material-caption">
+                  <span>Fechamento seguro e moderno</span>
+                </div>
+              </div>
+
+              <!-- Detalhe 3: Acabamento Perfeito -->
+              <div class="material-card lightbox-trigger" id="matAcabamento" tabindex="0" role="button" aria-label="Ampliar foto: Acabamento perfeito em todos os detalhes"
+                   data-lightbox-src="img/empresa/acabamento-detalhe.svg"
+                   data-lightbox-title="Acabamento Perfeito em Todos os Detalhes"
+                   data-lightbox-desc="Junções a 45 graus usinadas com precisão milimétrica, vedação perimetral EPDM e pintura eletrostática uniforme.">
+                <img src="img/empresa/acabamento-detalhe.svg" alt="Acabamento perfeito em esquadria 45 graus" class="material-img" loading="lazy" decoding="async" />
+                <div class="material-caption">
+                  <span>Acabamento perfeito em todos os detalhes</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 2. Card Sobre Nós (Fundo Arquitetônico Moderno) -->
+            <article class="about-bento-card" id="sobre">
+              <div class="about-card-bg">
+                <img src="img/empresa/sobre-nos-fachada.svg" alt="Fachada da fábrica de esquadrias" class="about-bg-img" loading="lazy" decoding="async" />
+                <div class="about-card-overlay"></div>
+              </div>
+              <div class="about-card-content">
+                <h3 class="about-card-title">Sobre nós</h3>
+                <p class="about-card-text">
+                  Somos especialistas em esquadrias, oferecendo qualidade, segurança e soluções sob medida para o seu projeto. Trabalhamos com materiais de alta qualidade e um atendimento focado na sua satisfação.
+                </p>
+                <button type="button" class="btn btn-pill-blue" id="btnSobreNos">
+                  Saiba mais
+                </button>
+              </div>
+            </article>
+
+            <!-- 3. Card Atendemos sua Região -->
+            <article class="region-bento-card" id="regiao">
+              <div class="region-card-body">
+                <div class="region-info-side">
+                  <h3 class="region-title">Atendemos sua região</h3>
+                  <p class="region-subtitle">Estamos prontos para atender você e sua obra.</p>
+
+                  <ul class="region-locations-list">
+                    <li>
+                      <span class="region-bullet-icon">📍</span>
+                      <span>Sua cidade</span>
+                    </li>
+                    <li>
+                      <span class="region-bullet-icon">🏢</span>
+                      <span>Cidades próximas</span>
+                    </li>
+                    <li>
+                      <span class="region-bullet-icon">🗺️</span>
+                      <span>Estado</span>
+                    </li>
+                    <li>
+                      <span class="region-bullet-icon">📍</span>
+                      <span>Região de atendimento</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Ilustração do Mapa com Pin Azul -->
+                <div class="region-map-side">
+                  <img src="img/empresa/mapa-atendimento.svg" alt="Mapa com raio de atendimento" class="region-map-img" loading="lazy" decoding="async" />
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- ================================================================
+             4. FAIXA INFERIOR BENTO (5 BLOCOS EM LINHA ESCURA / CONTRASTE)
+             ================================================================ -->
+        <section class="bottom-bento-strip" aria-label="Informações Complementares e FAQ">
+          
+          <!-- Bloco 1: Foto Arquitetônica com Frase -->
+          <article class="bento-strip-card bento-photo-statement" id="bentoCardConforto">
+            <img src="img/empresa/conforto-beleza.svg" alt="Ambiente com esquadrias de vidro e jardim" class="strip-photo-bg" loading="lazy" decoding="async" />
+            <div class="statement-overlay">
+              <p class="statement-text">Mais conforto, segurança e beleza para o seu projeto.</p>
+            </div>
+          </article>
+
+          <!-- Bloco 2: Depoimento de Cliente -->
+          <article class="bento-strip-card bento-testimonial-card" id="bentoCardDepoimento">
+            <h4 class="bento-card-header-title">O que nossos clientes dizem</h4>
+            <div class="testimonial-body">
+              <blockquote class="testimonial-quote">
+                &ldquo;[Depoimento real do cliente]&rdquo;
+              </blockquote>
+              <div class="testimonial-rating" aria-label="5 de 5 estrelas">
+                ★★★★★
+              </div>
+              <div class="testimonial-author">Nome do cliente</div>
+            </div>
+          </article>
+
+          <!-- Bloco 3: Foto Macro do Perfil / Frame de Alumínio -->
+          <article class="bento-strip-card bento-frame-photo" id="bentoCardFrame">
+            <img src="img/empresa/frame-detalhe.svg" alt="Detalhe do perfil de alumínio preto" class="strip-photo-bg" loading="lazy" decoding="async" />
+          </article>
+
+          <!-- Bloco 4: Perguntas Frequentes (FAQ Interativo) -->
+          <article class="bento-strip-card bento-faq-card" id="faq">
+            <h4 class="bento-card-header-title">Perguntas frequentes</h4>
+            <div class="faq-accordion-group">
+              
+              <div class="faq-row-item">
+                <button class="faq-trigger-btn" aria-expanded="false">
+                  <span>Vocês trabalham com medidas personalizadas?</span>
+                  <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-collapse-body" hidden>
+                  <p>Sim! Fabricamos esquadrias personalizadas exatamente de acordo com as dimensões e necessidades da sua planta ou projeto arquitetônico.</p>
+                </div>
+              </div>
+
+              <div class="faq-row-item">
+                <button class="faq-trigger-btn" aria-expanded="false">
+                  <span>Como solicito um orçamento?</span>
+                  <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-collapse-body" hidden>
+                  <p>Basta clicar em qualquer botão &ldquo;Solicitar orçamento&rdquo; no site ou nos enviar uma mensagem no WhatsApp com as medidas aproximadas para receber um atendimento ágil.</p>
+                </div>
+              </div>
+
+              <div class="faq-row-item">
+                <button class="faq-trigger-btn" aria-expanded="false">
+                  <span>Quais formas de pagamento são aceitas?</span>
+                  <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-collapse-body" hidden>
+                  <p>Aceitamos Pix com desconto, cartões de crédito parcelados, transferência bancária e condições especiais para pedidos de obras completas.</p>
+                </div>
+              </div>
+
+              <div class="faq-row-item">
+                <button class="faq-trigger-btn" aria-expanded="false">
+                  <span>Vocês realizam instalação?</span>
+                  <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-collapse-body" hidden>
+                  <p>Sim! Contamos com equipe técnica qualificada para instalação precisa com vedação perfeita, chumbamento e regulagem de fechos.</p>
+                </div>
+              </div>
+
+              <div class="faq-row-item">
+                <button class="faq-trigger-btn" aria-expanded="false">
+                  <span>Qual é o prazo de entrega?</span>
+                  <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-collapse-body" hidden>
+                  <p>O prazo varia conforme o modelo e a metragem do pedido. Itens padronizados possuem entrega rápida, e projetos sob medida têm cronograma pontual alinhado à sua obra.</p>
+                </div>
+              </div>
+
+              <div class="faq-row-item">
+                <button class="faq-trigger-btn" aria-expanded="false">
+                  <span>Quais cidades vocês atendem?</span>
+                  <span class="faq-toggle-icon">+</span>
+                </button>
+                <div class="faq-collapse-body" hidden>
+                  <p>Atendemos toda a nossa cidade, municípios vizinhos e regiões metropolitanas com logística segura para entrega e instalação.</p>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- Bloco 5: CTA Final com Perfis de Alumínio -->
+          <article class="bento-strip-card bento-cta-card" id="bentoCardCta">
+            <div class="bento-cta-bg">
+              <img src="img/empresa/perfis-estoque.svg" alt="Perfis de alumínio prontos para produção" class="strip-photo-bg" loading="lazy" decoding="async" />
+              <div class="bento-cta-overlay"></div>
+            </div>
+            <div class="bento-cta-content">
+              <h4 class="bento-cta-title">Esquadrias de qualidade e o melhor preço do mercado.</h4>
+              <button type="button" class="btn btn-pill-blue" id="btnFinalCta">
+                Solicitar orçamento
+              </button>
+            </div>
+          </article>
+
+        </section>
+
+      </div>
+    </main>
+
+
+    <!-- ====================================================================
+         RODAPÉ INFORMATIVO E CONTATOS
+         ==================================================================== -->
+    <footer class="site-footer" id="contato">
+      <div class="site-container footer-content">
+        <div class="footer-col-brand">
+          <div class="brand-text">
+            <span class="brand-title text-white">ESQUADRIAS</span>
+            <span class="brand-subtitle text-gray">QUALIDADE EM CADA DETALHE</span>
+          </div>
+          <p class="footer-brand-desc">
+            Sua melhor escolha em portas, janelas e esquadrias de alumínio. Fabricação com matéria-prima certificada, durabilidade extrema e fino acabamento.
+          </p>
+        </div>
+
+        <div class="footer-col-nav">
+          <h5 class="footer-title">Navegação</h5>
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#ofertas">Oferta Especial</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#faq">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-contact">
+          <h5 class="footer-title">Canais de Atendimento</h5>
+          <ul class="footer-contact-list">
+            <li>
+              <strong>WhatsApp:</strong> 
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" id="footerWhatsappLink">(11) 99999-9999</a>
+            </li>
+            <li>
+              <strong>Telefone:</strong> 
+              <a href="tel:+551133333333" id="footerPhoneLink">(11) 3333-3333</a>
+            </li>
+            <li>
+              <strong>E-mail:</strong> 
+              <a href="mailto:contato@esquadriasdealuminio.com.br" id="footerEmailLink">contato@esquadriasdealuminio.com.br</a>
+            </li>
+            <li>
+              <strong>Horário:</strong> Segunda a Sexta das 08h às 18h | Sábado das 08h às 12h
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-container footer-bottom-bar">
+        <p>&copy; 2026 Esquadrias de Alumínio. Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+        <p>Feito para valorizar seu imóvel com segurança e design.</p>
+      </div>
+    </footer>
+
+
+    <!-- ====================================================================
+         GALERIA LIGHTBOX (CSS + JS PURO)
+         ==================================================================== -->
+    <div id="lightboxModal" class="lightbox-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Visualizador de Fotos em Alta Resolução">
+      <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox-container" id="lightboxContainer">
+        <!-- Topo da Barra do Lightbox -->
+        <div class="lightbox-top-bar">
+          <div class="lightbox-counter-badge" id="lightboxCounter">1 / 10</div>
+          <button type="button" class="btn-close-lightbox" id="closeLightboxBtn" aria-label="Fechar visualizador (Esc)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Palco Principal com Imagem e Navegação -->
+        <div class="lightbox-stage">
+          <button type="button" class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" aria-label="Foto anterior (Seta para a esquerda)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div class="lightbox-img-wrapper" id="lightboxImgWrapper">
+            <img id="lightboxImage" src="" alt="Imagem ampliada" class="lightbox-active-img" decoding="async" />
+          </div>
+
+          <button type="button" class="lightbox-nav-btn next-btn" id="lightboxNextBtn" aria-label="Próxima foto (Seta para a direita)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Rodapé do Lightbox com Título, Descrição e Ação Rápida -->
+        <div class="lightbox-caption-bar">
+          <div class="lightbox-text-info">
+            <h3 id="lightboxTitle" class="lightbox-title">Título do Produto</h3>
+            <p id="lightboxDesc" class="lightbox-desc">Descrição e especificações do modelo selecionado.</p>
+          </div>
+          <div class="lightbox-actions-col">
+            <button type="button" class="btn btn-pill-blue lightbox-quote-btn" id="lightboxQuoteBtn">
+              Solicitar orçamento deste modelo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====================================================================
+         MODAL DE SOLICITAÇÃO DE ORÇAMENTO (POPUP INTERATIVO)
+         ==================================================================== -->
+    <div id="quoteModal" class="modal-dialog-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+      <div class="modal-dialog-window">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h3 id="modalTitle" class="modal-title">Solicitar Orçamento Rápido</h3>
+            <p class="modal-subtitle">Preencha as informações para receber nossa proposta sem compromisso.</p>
+          </div>
+          <button type="button" class="btn-close-modal" id="closeQuoteModalBtn" aria-label="Fechar modal">&times;</button>
+        </div>
+
+        <form id="quoteFormModal" class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="modalInputNome" class="form-label">Nome Completo *</label>
+            <input type="text" id="modalInputNome" name="nome" class="form-input" placeholder="Ex: Carlos Silva" required />
+            <span class="field-error-msg" id="errorNome">Por favor, informe seu nome.</span>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label for="modalInputTelefone" class="form-label">WhatsApp / Telefone *</label>
+              <input type="tel" id="modalInputTelefone" name="telefone" class="form-input" placeholder="(11) 99999-9999" required />
+              <span class="field-error-msg" id="errorTelefone">Informe um número válido.</span>
+            </div>
+            <div class="form-group">
+              <label for="modalInputCidade" class="form-label">Cidade / Bairro *</label>
+              <input type="text" id="modalInputCidade" name="cidade" class="form-input" placeholder="Ex: São Paulo - Centro" required />
+              <span class="field-error-msg" id="errorCidade">Informe sua cidade.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="modalSelectProduto" class="form-label">Tipo de Esquadria *</label>
+            <select id="modalSelectProduto" name="produto" class="form-select" required>
+              <option value="Janela de Alumínio">Janela de Alumínio</option>
+              <option value="Porta de Alumínio">Porta de Alumínio</option>
+              <option value="Janela de Correr">Janela de Correr</option>
+              <option value="Porta Balcão">Porta Balcão</option>
+              <option value="Maxim-ar">Maxim-ar</option>
+              <option value="Esquadrias Sob Medida">Esquadrias Sob Medida</option>
+              <option value="Oferta: Janela 1,20 x 1,00 m">Oferta: Janela 1,20 x 1,00 m (R$ 549,90)</option>
+              <option value="Outros / Projeto Completo">Outros / Projeto Completo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="modalInputMensagem" class="form-label">Medidas aproximadas ou detalhes da obra</label>
+            <textarea id="modalInputMensagem" name="mensagem" class="form-textarea" rows="3" placeholder="Ex: Preciso de 3 janelas 1,20x1,00 e 1 porta balcão para sala..."></textarea>
+          </div>
+
+          <div class="modal-form-actions">
+            <button type="submit" class="btn btn-pill-blue btn-full" id="btnSubmitModalQuote">
+              Enviar Solicitação
+            </button>
+            <button type="button" class="btn btn-whatsapp btn-full" id="btnSubmitViaWhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              Enviar pelo WhatsApp
+            </button>
+          </div>
+        </form>
+
+        <div id="modalSuccessMessage" class="modal-success-state" hidden>
+          <div class="success-icon">&#10003;</div>
+          <h4>Solicitação Recebida com Sucesso!</h4>
+          <p>Nossa equipe técnica já está preparando sua proposta personalizada. Em breve entraremos em contato via WhatsApp ou telefone.</p>
+          <button type="button" class="btn btn-pill-blue" id="btnOkModalSuccess">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====================================================================
+         BOTÃO FLUTUANTE WHATSAPP
+         ==================================================================== -->
+    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="floatingWhatsapp" aria-label="Falar conosco no WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+      <span class="whatsapp-tooltip">Atendimento Online</span>
+    </a>
+
+    <!-- Script Principal -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

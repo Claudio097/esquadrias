@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallTile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <linearGradient id="whiteFrame" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <linearGradient id="miniBoreal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="600" height="400" fill="url(#wallTile)"/>
+
+  <!-- Window Frame Fixed in Wall -->
+  <rect x="120" y="40" width="360" height="320" rx="4" fill="url(#whiteFrame)" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="135" y="55" width="330" height="290" fill="#0f172a" opacity="0.12"/>
+
+  <!-- Tilted Projected Leaf (Projetada para Fora) in Perspective -->
+  <!-- Stainless Steel Articulated Arms (Braços de Articulação Inox) -->
+  <line x1="140" y1="200" x2="100" y2="280" stroke="#64748b" stroke-width="4"/>
+  <circle cx="140" cy="200" r="4" fill="#334155"/>
+  <circle cx="100" cy="280" r="4" fill="#334155"/>
+
+  <line x1="460" y1="200" x2="500" y2="280" stroke="#64748b" stroke-width="4"/>
+  <circle cx="460" cy="200" r="4" fill="#334155"/>
+  <circle cx="500" cy="280" r="4" fill="#334155"/>
+
+  <!-- Open Sash projected downwards/outwards -->
+  <polygon points="140,55 460,55 510,310 90,310" fill="url(#whiteFrame)" stroke="#cbd5e1" stroke-width="3" filter="drop-shadow(0 15px 15px rgba(0,0,0,0.15))"/>
+  <polygon points="160,70 440,70 485,295 115,295" fill="url(#miniBoreal)"/>
+
+  <!-- Brass / Chrome Locking Cockspur Latch (Fecho Alavanca) -->
+  <rect x="285" y="275" width="30" height="15" rx="3" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+  <path d="M300,285 L300,305 L315,305" fill="none" stroke="#475569" stroke-width="3"/>
+</svg>
