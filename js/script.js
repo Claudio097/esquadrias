@@ -1,3 +1,5 @@
+import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
+
 /**
  * ==========================================================================
  * ESQUADRIAS DE ALUMÍNIO - JAVASCRIPT PRINCIPAL (VANILLA JS)
@@ -30,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLightboxGallery();
   initFloatingWhatsApp();
   initSmoothScroll();
+  initGoogleMapsCoverage();
 });
 
 /**
@@ -637,4 +640,395 @@ function initLightboxGallery() {
     }
   }
 }
+
+/**
+ * ==========================================================================
+ * GOOGLE MAPS PLATFORM - COBERTURA REGIÃO BRAGANTINA & GEOLOCALIZAÇÃO
+ * Implementado com @googlemaps/js-api-loader e AdvancedMarkerElement
+ * ==========================================================================
+ */
+
+async function initGoogleMapsCoverage() {
+  const mapElement = document.getElementById("googleMapRegion");
+  const loadingOverlay = document.getElementById("mapLoadingOverlay");
+  const statusEl = document.getElementById("userCityStatus");
+  const badgeEl = document.getElementById("userCoverageBadge");
+  const legendUser = document.getElementById("legendBadgeUser");
+  const btnDetectMyLoc = document.getElementById("btnDetectMyLoc");
+  const btnFocusBragantina = document.getElementById("btnFocusBragantina");
+
+  if (!mapElement) return;
+
+  // Escuta de Quota Exceeded (Quota Defense)
+  window.addEventListener("gmp-quota-exceeded", () => {
+    const quotaBanner = document.getElementById("gmpQuotaBanner");
+    if (quotaBanner) quotaBanner.style.display = "block";
+  });
+
+  // Chave de API provisionada
+  const apiKey = (import.meta && import.meta.env && import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
+    ? import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+    : "AIzaSyB2bCBx3rEw8dWHYqhFLKeKaLcoLwDoo6Y";
+
+  try {
+    setOptions({
+      key: apiKey,
+      v: "weekly",
+      language: "pt-BR",
+      region: "BR"
+    });
+
+    const { Map, Circle, InfoWindow } = await importLibrary("maps");
+    const { AdvancedMarkerElement, PinElement } = await importLibrary("marker");
+
+    // Centro da Região Bragantina (Eixo Bragança Paulista - Atibaia)
+    const BRAGANTINA_CENTER = { lat: -23.033, lng: -46.545 };
+    const BRAGANCA_PAULISTA = { lat: -22.9527, lng: -46.5419 };
+
+    // Cidades da Região Bragantina atendidas
+    const CITIES_BRAGANTINA = [
+      {
+        name: "Bragança Paulista",
+        lat: -22.9527,
+        lng: -46.5419,
+        isHub: true,
+        desc: "Sede de Fabricação, Medição e Logística Principal da Barreto."
+      },
+      {
+        name: "Atibaia",
+        lat: -23.1189,
+        lng: -46.5539,
+        isHub: true,
+        desc: "Atendimento frequente para residências, condomínios fechados e comércios."
+      },
+      {
+        name: "Piracaia",
+        lat: -23.0539,
+        lng: -46.4589,
+        isHub: false,
+        desc: "Equipe técnica e entregas programadas semanais."
+      },
+      {
+        name: "Jarinu",
+        lat: -23.1008,
+        lng: -46.7278,
+        isHub: false,
+        desc: "Instalação de portas, janelas e fachadas sob medida."
+      },
+      {
+        name: "Nazaré Paulista",
+        lat: -23.1814,
+        lng: -46.3969,
+        isHub: false,
+        desc: "Projetos em esquadrias de alumínio para chácaras e residências na represa."
+      },
+      {
+        name: "Joanópolis",
+        lat: -22.9297,
+        lng: -46.2756,
+        isHub: false,
+        desc: "Obras residenciais e rurais com vedação de alto padrão."
+      },
+      {
+        name: "Bom Jesus dos Perdões",
+        lat: -23.1333,
+        lng: -46.4667,
+        isHub: false,
+        desc: "Atendimento ágil com visita técnica para medição gratuita."
+      },
+      {
+        name: "Pedra Bela",
+        lat: -22.7933,
+        lng: -46.4422,
+        isHub: false,
+        desc: "Instalações e manutenção preventiva especializada."
+      },
+      {
+        name: "Pinhalzinho",
+        lat: -22.7806,
+        lng: -46.5903,
+        isHub: false,
+        desc: "Fornecimento de portas balcão, janelas e vidros temperados."
+      },
+      {
+        name: "Vargem",
+        lat: -22.8892,
+        lng: -46.4172,
+        isHub: false,
+        desc: "Atendimento na divisa SP/MG com rota logística pontual."
+      }
+    ];
+
+    // Inicialização do Mapa
+    const map = new Map(mapElement, {
+      center: BRAGANTINA_CENTER,
+      zoom: 10,
+      mapId: "DEMO_MAP_ID",
+      internalUsageAttributionIds: ["gmp_mcp_codeassist_v1_aistudio"],
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: true,
+      zoomControl: true,
+      gestureHandling: "cooperative"
+    });
+
+    // InfoWindow compartilhada
+    const sharedInfoWindow = new InfoWindow({
+      maxWidth: 280
+    });
+
+    // Círculo translúcido ilustrando o raio de cobertura da Região Bragantina
+    new Circle({
+      strokeColor: "#0084ff",
+      strokeOpacity: 0.85,
+      strokeWeight: 2,
+      fillColor: "#0084ff",
+      fillOpacity: 0.12,
+      map: map,
+      center: BRAGANTINA_CENTER,
+      radius: 38000 // 38km de raio cobrindo todo o polo bragantino
+    });
+
+    // Marcadores das Cidades da Região Bragantina
+    CITIES_BRAGANTINA.forEach((city) => {
+      let pin;
+      if (city.isHub && city.name === "Bragança Paulista") {
+        pin = new PinElement({
+          background: "#0084ff",
+          borderColor: "#004b99",
+          glyphColor: "#ffffff",
+          scale: 1.25
+        });
+      } else if (city.isHub) {
+        pin = new PinElement({
+          background: "#0284c7",
+          borderColor: "#0369a1",
+          glyphColor: "#ffffff",
+          scale: 1.05
+        });
+      } else {
+        pin = new PinElement({
+          background: "#38bdf8",
+          borderColor: "#0284c7",
+          glyphColor: "#ffffff",
+          scale: 0.85
+        });
+      }
+
+      const marker = new AdvancedMarkerElement({
+        map: map,
+        position: { lat: city.lat, lng: city.lng },
+        content: pin.element,
+        title: `${city.name} - Região Bragantina`
+      });
+
+      marker.addListener("click", () => {
+        const isMain = city.name === "Bragança Paulista";
+        const contentStr = `
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;padding:4px;color:#0f172a;">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+              <span style="font-size:1.1rem;">📍</span>
+              <strong style="font-size:0.92rem;color:${isMain ? '#0084ff' : '#0f172a'};">${city.name}</strong>
+            </div>
+            <p style="margin:0 0 6px;font-size:0.78rem;line-height:1.4;color:#475569;">${city.desc}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:6px;border-top:1px solid #e2e8f0;">
+              <span style="font-size:0.7rem;font-weight:700;color:#0284c7;background:#f0f9ff;padding:2px 6px;border-radius:4px;">
+                ${isMain ? 'Fábrica & Sede' : 'Região Atendida'}
+              </span>
+              <a href="#quoteModal" style="font-size:0.75rem;font-weight:700;color:#0084ff;text-decoration:none;">Orçamento &rarr;</a>
+            </div>
+          </div>
+        `;
+        sharedInfoWindow.setContent(contentStr);
+        sharedInfoWindow.open({
+          anchor: marker,
+          map: map
+        });
+      });
+    });
+
+    // Esconde o overlay de loading quando o mapa estiver pronto
+    google.maps.event.addListenerOnce(map, "idle", () => {
+      if (loadingOverlay) {
+        loadingOverlay.classList.add("fade-out");
+        setTimeout(() => {
+          loadingOverlay.style.display = "none";
+        }, 300);
+      }
+    });
+
+    // Variável para o marcador do usuário
+    let userMarker = null;
+
+    // Função de Geocalculação (Haversine) em km
+    function calcDistanceKm(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const dLat = (lat2 - lat1) * (Math.PI / 180);
+      const dLon = (lon2 - lon1) * (Math.PI / 180);
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
+
+    // Função para rastrear e exibir localização de quem acessou
+    async function locateVisitor(autoFit = true) {
+      if (!navigator.geolocation) {
+        if (statusEl) {
+          statusEl.innerHTML = "<span>Navegador sem suporte a GPS. (Polo Bragantino Ativo)</span>";
+        }
+        return;
+      }
+
+      if (statusEl) {
+        statusEl.innerHTML = '<span class="loc-loader-spin"></span> Detectando sua localização...';
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const userPos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          const distFromBraganca = calcDistanceKm(
+            userPos.lat,
+            userPos.lng,
+            BRAGANCA_PAULISTA.lat,
+            BRAGANCA_PAULISTA.lng
+          );
+
+          // Verifica se está dentro de um raio de 70km de Bragança
+          const isDirectCoverage = distFromBraganca <= 70;
+
+          // Busca o nome amigável da cidade
+          let cityName = "Sua Localidade";
+          try {
+            const revRes = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${userPos.lat}&lon=${userPos.lng}&zoom=12&addressdetails=1`,
+              { headers: { "Accept": "application/json" } }
+            );
+            if (revRes.ok) {
+              const revData = await revRes.json();
+              cityName =
+                revData.address?.city ||
+                revData.address?.town ||
+                revData.address?.municipality ||
+                revData.address?.village ||
+                revData.address?.suburb ||
+                "Sua Cidade";
+            }
+          } catch (e) {
+            cityName = "Sua Localidade";
+          }
+
+          // Atualiza dados na lista de texto da interface
+          if (statusEl) {
+            statusEl.innerHTML = `<strong>${cityName}</strong> (a aprox. ${Math.round(distFromBraganca)} km de Bragança Paulista)`;
+          }
+
+          if (badgeEl) {
+            badgeEl.hidden = false;
+            if (isDirectCoverage) {
+              badgeEl.className = "user-coverage-pill in-coverage";
+              badgeEl.textContent = "✅ Na área de atendimento imediato";
+            } else {
+              badgeEl.className = "user-coverage-pill nearby-coverage";
+              badgeEl.textContent = "🚚 Atendimento com rota especial";
+            }
+          }
+
+          if (legendUser) legendUser.hidden = false;
+
+          // Marcador visual do usuário (Verde Esmeralda)
+          const userPin = new PinElement({
+            background: "#10b981",
+            borderColor: "#065f46",
+            glyphColor: "#ffffff",
+            scale: 1.2
+          });
+
+          if (userMarker) {
+            userMarker.position = userPos;
+          } else {
+            userMarker = new AdvancedMarkerElement({
+              map: map,
+              position: userPos,
+              content: userPin.element,
+              title: `Você está aqui (${cityName})`
+            });
+
+            userMarker.addListener("click", () => {
+              const infoBox = `
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;padding:4px;color:#0f172a;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                    <span style="font-size:1.1rem;">📍</span>
+                    <strong style="font-size:0.92rem;color:#065f46;">Você está aqui!</strong>
+                  </div>
+                  <p style="margin:0 0 6px;font-size:0.8rem;color:#334155;"><strong>${cityName}</strong> &bull; ${Math.round(distFromBraganca)} km de Bragança Paulista</p>
+                  <span style="display:inline-block;padding:3px 8px;font-size:0.72rem;font-weight:700;border-radius:12px;background:#ecfdf5;color:#065f46;">
+                    ${isDirectCoverage ? 'Atendimento Barreto Confirmado' : 'Consulte entrega para sua obra'}
+                  </span>
+                </div>
+              `;
+              sharedInfoWindow.setContent(infoBox);
+              sharedInfoWindow.open({
+                anchor: userMarker,
+                map: map
+              });
+            });
+          }
+
+          if (autoFit) {
+            // Ajusta o enquadramento do mapa para mostrar o visitante e o polo bragantino
+            const bounds = new google.maps.LatLngBounds();
+            bounds.extend(userPos);
+            bounds.extend(BRAGANCA_PAULISTA);
+            bounds.extend({ lat: -23.1189, lng: -46.5539 }); // Atibaia
+            map.fitBounds(bounds, { top: 30, bottom: 30, left: 30, right: 30 });
+          } else {
+            map.panTo(userPos);
+            map.setZoom(12);
+          }
+        },
+        (error) => {
+          // Usuário recusou permissão ou deu timeout
+          if (statusEl) {
+            statusEl.innerHTML = '<span style="color:#64748b;">Localização disponível sob clique (Região Bragantina em destaque)</span>';
+          }
+        },
+        { enableHighAccuracy: false, timeout: 6000, maximumAge: 60000 }
+      );
+    }
+
+    // Dispara a tentativa automática de localização do visitante
+    locateVisitor(true);
+
+    // Botões de Interação
+    if (btnDetectMyLoc) {
+      btnDetectMyLoc.addEventListener("click", () => {
+        locateVisitor(false);
+      });
+    }
+
+    if (btnFocusBragantina) {
+      btnFocusBragantina.addEventListener("click", () => {
+        map.panTo(BRAGANTINA_CENTER);
+        map.setZoom(10);
+      });
+    }
+
+  } catch (err) {
+    console.error("Erro ao carregar Google Maps:", err);
+    if (loadingOverlay) {
+      loadingOverlay.innerHTML = `
+        <span style="color:#dc2626;font-size:0.85rem;font-weight:700;">Erro ao carregar mapa</span>
+        <button type="button" class="btn btn-pill-blue" style="font-size:0.75rem;padding:6px 12px;margin-top:6px;" onclick="window.location.reload()">Recarregar</button>
+      `;
+    }
+  }
+}
+
 
