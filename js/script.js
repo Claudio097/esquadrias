@@ -6,7 +6,7 @@
  */
 
 const CONFIG = {
-  empresa: "Esquadrias de Alumínio",
+  empresa: "Esquadria e Vidraçaria Barreto",
   whatsapp: "5511999999999",
   telefoneFormatado: "(11) 99999-9999",
   email: "contato@esquadriasdealuminio.com.br",
