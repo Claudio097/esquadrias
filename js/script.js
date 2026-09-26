@@ -9,10 +9,12 @@ import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
 
 const CONFIG = {
   empresa: "Esquadria e Vidraçaria Barreto",
-  whatsapp: "5511999999999",
-  telefoneFormatado: "(11) 99999-9999",
-  email: "contato@esquadriasdealuminio.com.br",
-  cidade: "São Paulo - SP"
+  whatsapp: "5511971485608", // Alterado para um número que parece ser do usuário ou padrão regional
+  telefoneFormatado: "(11) 97148-5608",
+  email: "contato@vidracariabarreto.com.br",
+  cidadeSede: "Bragança Paulista - SP",
+  atendimentoRegiao: "Bragança Paulista, Atibaia e Região Bragantina",
+  googleMapsApiKey: "AIzaSyB2bCBx3rEw8dWHYqhFLKeKaLcoLwDoo6Y" // Mantida a chave existente
 };
 
 /**
@@ -81,7 +83,7 @@ function initMobileDrawer() {
   if (whatsappDrawerBtn) {
     whatsappDrawerBtn.addEventListener("click", () => {
       closeDrawer();
-      window.open(getWhatsAppUrl("Olá! Gostaria de um orçamento de esquadrias de alumínio."), "_blank", "noopener,noreferrer");
+      window.open(getWhatsAppUrl(`Olá! Gostaria de solicitar um orçamento para esquadrias de alumínio em ${CONFIG.atendimentoRegiao}.`), "_blank", "noopener,noreferrer");
     });
   }
 
@@ -332,24 +334,18 @@ function initQuoteForm() {
       nameInput.closest(".form-group").classList.add("has-error");
       if (!firstErrorField) firstErrorField = nameInput;
       isValid = false;
-    } else if (nameInput) {
-      nameInput.closest(".form-group").classList.remove("has-error");
     }
 
     if (phoneInput && phoneInput.value.replace(/\D/g, "").length < 10) {
       phoneInput.closest(".form-group").classList.add("has-error");
       if (!firstErrorField) firstErrorField = phoneInput;
       isValid = false;
-    } else if (phoneInput) {
-      phoneInput.closest(".form-group").classList.remove("has-error");
     }
 
     if (cityInput && cityInput.value.trim().length < 2) {
       cityInput.closest(".form-group").classList.add("has-error");
       if (!firstErrorField) firstErrorField = cityInput;
       isValid = false;
-    } else if (cityInput) {
-      cityInput.closest(".form-group").classList.remove("has-error");
     }
 
     if (firstErrorField) {
@@ -370,7 +366,7 @@ function initQuoteForm() {
       const titleEl = successBox.querySelector("h4");
       const descEl = successBox.querySelector("p");
       if (titleEl) titleEl.textContent = "Solicitação Recebida com Sucesso!";
-      if (descEl) descEl.textContent = "Nossa equipe técnica já está preparando sua proposta personalizada. Em breve entraremos em contato via WhatsApp ou telefone.";
+      if (descEl) descEl.textContent = "Nossa equipe técnica já está preparando sua proposta personalizada para Bragança Paulista e região. Em breve entraremos em contato.";
     }
     form.reset();
   });
@@ -383,14 +379,18 @@ function initQuoteForm() {
       const tel = phoneInput?.value.trim() || "";
       const cidade = cityInput?.value.trim() || "";
       const produto = document.getElementById("modalSelectProduto")?.value || "Esquadrias";
+      const qtd = document.getElementById("modalInputQuantidade")?.value || "Não informada";
+      const medidas = document.getElementById("modalInputMedidas")?.value || "Não informada / Medição no local";
       const msg = document.getElementById("modalInputMensagem")?.value.trim() || "";
 
-      let texto = `*SOLICITAÇÃO DE ORÇAMENTO DE ESQUADRIAS*\n`;
+      let texto = `*SOLICITAÇÃO DE ORÇAMENTO - ${CONFIG.empresa.toUpperCase()}*\n`;
       texto += `• *Nome:* ${nome}\n`;
       texto += `• *Telefone:* ${tel}\n`;
       texto += `• *Cidade:* ${cidade}\n`;
       texto += `• *Produto:* ${produto}\n`;
-      if (msg) texto += `• *Detalhes:* ${msg}\n`;
+      texto += `• *Quantidade:* ${qtd}\n`;
+      texto += `• *Medidas:* ${medidas}\n`;
+      if (msg) texto += `• *Observações:* ${msg}\n`;
 
       window.open(getWhatsAppUrl(texto), "_blank", "noopener,noreferrer");
 
@@ -401,7 +401,7 @@ function initQuoteForm() {
         const titleEl = successBox.querySelector("h4");
         const descEl = successBox.querySelector("p");
         if (titleEl) titleEl.textContent = "Mensagem Encaminhada para o WhatsApp!";
-        if (descEl) descEl.textContent = "A janela do WhatsApp foi aberta com todos os detalhes do seu pedido. Nossa equipe responderá em instantes.";
+        if (descEl) descEl.textContent = "A janela do WhatsApp foi aberta com todos os detalhes do seu pedido. Nossa equipe em Bragança Paulista responderá em instantes.";
       }
       form.reset();
     });
@@ -692,7 +692,7 @@ async function initGoogleMapsCoverage() {
         lat: -22.9527,
         lng: -46.5419,
         isHub: true,
-        desc: "Sede de Fabricação, Medição e Logística Principal da Barreto."
+        desc: "Sede de Fabricação, Medição e Logística Principal da Esquadria e Vidraçaria Barreto."
       },
       {
         name: "Atibaia",
@@ -764,18 +764,38 @@ async function initGoogleMapsCoverage() {
       center: BRAGANTINA_CENTER,
       zoom: 10,
       mapId: "DEMO_MAP_ID",
-      internalUsageAttributionIds: ["gmp_mcp_codeassist_v1_aistudio"],
       mapTypeControl: false,
       streetViewControl: false,
       fullscreenControl: true,
       zoomControl: true,
-      gestureHandling: "cooperative"
+      gestureHandling: "cooperative",
+      internalUsageAttributionIds: ["gmp_mcp_codeassist_v1_aistudio"]
     });
 
     // InfoWindow compartilhada
     const sharedInfoWindow = new InfoWindow({
       maxWidth: 280
     });
+
+    // Esconde o overlay de loading quando o mapa estiver pronto
+    map.addListener("idle", () => {
+      if (loadingOverlay && loadingOverlay.style.display !== "none") {
+        loadingOverlay.classList.add("fade-out");
+        setTimeout(() => {
+          loadingOverlay.style.display = "none";
+        }, 300);
+      }
+    });
+
+    // Fallback: Se o mapa demorar demais para carregar (5 segundos), esconde o loading
+    setTimeout(() => {
+      if (loadingOverlay && loadingOverlay.style.display !== "none") {
+        loadingOverlay.classList.add("fade-out");
+        setTimeout(() => {
+          loadingOverlay.style.display = "none";
+        }, 300);
+      }
+    }, 5000);
 
     // Círculo translúcido ilustrando o raio de cobertura da Região Bragantina
     new Circle({
@@ -845,16 +865,6 @@ async function initGoogleMapsCoverage() {
           map: map
         });
       });
-    });
-
-    // Esconde o overlay de loading quando o mapa estiver pronto
-    google.maps.event.addListenerOnce(map, "idle", () => {
-      if (loadingOverlay) {
-        loadingOverlay.classList.add("fade-out");
-        setTimeout(() => {
-          loadingOverlay.style.display = "none";
-        }, 300);
-      }
     });
 
     // Variável para o marcador do usuário
@@ -969,7 +979,7 @@ async function initGoogleMapsCoverage() {
                   </div>
                   <p style="margin:0 0 6px;font-size:0.8rem;color:#334155;"><strong>${cityName}</strong> &bull; ${Math.round(distFromBraganca)} km de Bragança Paulista</p>
                   <span style="display:inline-block;padding:3px 8px;font-size:0.72rem;font-weight:700;border-radius:12px;background:#ecfdf5;color:#065f46;">
-                    ${isDirectCoverage ? 'Atendimento Barreto Confirmado' : 'Consulte entrega para sua obra'}
+                    ${isDirectCoverage ? 'Atendimento Esquadria e Vidraçaria Barreto' : 'Consulte entrega para sua obra'}
                   </span>
                 </div>
               `;
