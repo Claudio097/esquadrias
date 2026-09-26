@@ -59,34 +59,8 @@
       "areaServed": ["Bragança Paulista", "Atibaia", "Itatiba", "Extrema", "Piracaia"]
     }
     </script>
-
-    <!-- Quota Defense Global Listener (Google Maps Platform) -->
-    <script>
-      window.gm_authFailure = () => {
-        window.dispatchEvent(new CustomEvent('gmp-quota-exceeded'));
-      };
-      const origConsoleError = console.error;
-      console.error = (...args) => {
-        origConsoleError.apply(console, args);
-        const msg = args.map((a) => String(a)).join(' ');
-        if (msg.includes('OverQuotaMapError') || msg.includes('QuotaExceededError')) {
-          window.dispatchEvent(new CustomEvent('gmp-quota-exceeded'));
-        }
-      };
-    </script>
   </head>
   <body>
-    <!-- Quota Defense Banner (Google Maps Platform) -->
-    <div id="gmpQuotaBanner" class="gmp-quota-banner" style="display:none;">
-      <span>
-        Google Maps Platform quota reached. If you are the app owner, visit
-        <a href="https://developers.google.com/maps/ai/ai-studio?utm_campaign=gmp_mcp_codeassist_v1_aistudio#quota_exceeded_errors" target="_blank" rel="noopener noreferrer">
-          maps developer site
-        </a>
-        for instructions to update your account.
-      </span>
-    </div>
-
     <!-- ====================================================================
          CABEÇALHO PRINCIPAL (STICKY)
          ==================================================================== -->
@@ -644,106 +618,7 @@
               </div>
             </article>
 
-            <!-- 3. Card Atendemos sua Região com Google Maps Interativo -->
-            <article class="region-bento-card" id="regiao">
-              <div class="region-card-body">
-                <div class="region-info-side">
-                  <div class="region-header-badge">
-                    <span class="coverage-live-dot"></span>
-                    <span>Cobertura Ativa &bull; Região Bragantina</span>
-                  </div>
-                  <h3 class="region-title">Atendemos sua região</h3>
-                  <p class="region-subtitle">
-                    Fábrica e equipe técnica própria com logística ágil para toda a <strong>Região Bragantina</strong>, Circuito das Águas e Grande São Paulo.
-                  </p>
-
-                  <ul class="region-locations-list">
-                    <li id="locationUserItem">
-                      <span class="region-bullet-icon">📍</span>
-                      <div class="region-list-text">
-                        <strong class="list-label">Sua localidade:</strong>
-                        <span id="userCityStatus" class="user-city-text">
-                          <span class="loc-loader-spin"></span> Localizando quem acessou...
-                        </span>
-                        <span id="userCoverageBadge" class="user-coverage-pill" hidden>Área de Atendimento</span>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="region-bullet-icon">🏢</span>
-                      <div class="region-list-text">
-                        <strong class="list-label">Cidades da Região Bragantina:</strong>
-                        <span class="region-cities-highlight">Bragança Paulista, Atibaia, Piracaia, Jarinu, Nazaré Paulista, Joanópolis, Bom Jesus dos Perdões, Pedra Bela, Vargem e Pinhalzinho.</span>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="region-bullet-icon">🗺️</span>
-                      <div class="region-list-text">
-                        <strong class="list-label">Estado &amp; Região Metropolitana:</strong>
-                        <span>São Paulo (SP) e cidades vizinhas do Sul de Minas Gerais.</span>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="region-bullet-icon">🚚</span>
-                      <div class="region-list-text">
-                        <strong class="list-label">Região de atendimento:</strong>
-                        <span>Visita técnica para medição no local, frete seguro e instalação especializada.</span>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <!-- Controles de Ação do Mapa -->
-                  <div class="region-actions-row">
-                    <button type="button" class="btn-region-action" id="btnDetectMyLoc" title="Atualizar minha posição no mapa">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <circle cx="12" cy="12" r="3"></circle>
-                        <line x1="12" y1="2" x2="12" y2="5"></line>
-                        <line x1="12" y1="19" x2="12" y2="22"></line>
-                        <line x1="2" y1="12" x2="5" y2="12"></line>
-                        <line x1="19" y1="12" x2="22" y2="12"></line>
-                      </svg>
-                      Minha Localização
-                    </button>
-                    <button type="button" class="btn-region-action" id="btnFocusBragantina" title="Centralizar na Região Bragantina">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                      </svg>
-                      Região Bragantina
-                    </button>
-                    <a href="#quoteModal" class="btn-region-quote" id="btnRegiaoQuote">
-                      Solicitar Medição
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Google Maps Interativo -->
-                <div class="region-map-side">
-                  <div class="google-map-wrapper">
-                    <div id="googleMapRegion" class="google-map-canvas" role="region" aria-label="Mapa de cobertura na Região Bragantina e localização do visitante"></div>
-                    
-                    <!-- Overlay de Carregamento do Mapa -->
-                    <div id="mapLoadingOverlay" class="map-loading-overlay">
-                      <div class="map-loading-spinner"></div>
-                      <span>Carregando Google Maps...</span>
-                    </div>
-
-                    <!-- Overlay de Legenda Flutuante no Mapa -->
-                    <div class="map-legend-overlay">
-                      <span class="legend-badge-blue">
-                        <span class="legend-dot-blue"></span> Região Bragantina
-                      </span>
-                      <span class="legend-badge-user" id="legendBadgeUser" hidden>
-                        <span class="legend-dot-green"></span> Você
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
           </div>
-
         </section>
 
 
@@ -861,6 +736,39 @@
             </div>
           </article>
 
+        </section>
+
+        <!-- ================================================================
+             5. SEÇÃO ENCONTRE-NOS (MAPA INCORPORADO)
+             ================================================================ -->
+        <section id="encontre-nos" class="find-us-section">
+          <div class="site-container">
+            <div class="section-header-centered">
+              <h2 class="section-heading-dark">Encontre-nos</h2>
+              <p class="section-subheading-muted">Atendemos Bragança Paulista e região. Entre em contato para solicitar seu orçamento.</p>
+            </div>
+            
+            <div class="map-embed-container">
+              <!-- O endereço é injetado via CONFIG.endereco no script.js -->
+              <iframe 
+                id="googleMapsEmbed"
+                title="Localização da empresa de esquadrias em Bragança Paulista"
+                src="about:blank" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            
+            <div class="map-action-footer">
+              <a id="btnDirectionsMap" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-pill-blue">
+                Como chegar
+              </a>
+            </div>
+          </div>
         </section>
 
       </div>
